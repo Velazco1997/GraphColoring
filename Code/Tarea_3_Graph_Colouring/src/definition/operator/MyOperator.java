@@ -1,21 +1,37 @@
 package definition.operator;
 
+import definition.operator.mutation.MutationOperator;
+import graphColoring.GreedyAlgorithm;
 import problem.definition.Operator;
 import problem.definition.State;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class MyOperator extends Operator {
+
+	private GreedyAlgorithm greedy;//Constructor
+	private MutationOperator mutationOperator;
+
+
 	/**
 	 * Genera una nueva vecindad a partir de un estado
 	 * @param state
-	 * @param integer tamaño de la vecindad
+	 * @param neighbourhoodSize tamaño de la vecindad
 	 * @return
 	 */
 	@Override
-	public List<State> generatedNewState(State state, Integer integer) {
-		return null;
+	public List<State> generatedNewState(State state, Integer neighbourhoodSize) {
+		List <State> neighborhooList = new ArrayList<>();
+
+		for(int i=0;i<neighbourhoodSize;i++){
+			State state1 = new State();
+			state1 = mutationOperator.stateMutation(state);//mutando la solucion para crear una nueva solucion
+			neighborhooList.add(state1);
+		}
+
+
+		return neighborhooList;
 	}
 
 	/**
@@ -26,7 +42,15 @@ public class MyOperator extends Operator {
 	@Override
 	public List<State> generateRandomState(Integer neighbourhoodSize) {
 
-		return null;
+		List<State> neighborhood=new ArrayList<>(neighbourhoodSize);
+		for(int i=0;i<neighbourhoodSize;i++){
+			State state = new State();
+			state=greedy.execute();
+			neighborhood.add(state);
+		}
+
+
+		return neighborhood;
 	}
 
 	/**

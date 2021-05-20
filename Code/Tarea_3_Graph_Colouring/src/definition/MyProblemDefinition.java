@@ -10,7 +10,7 @@ public class MyProblemDefinition {
 
 //    private ArrayList<Object> colors;
 	private ArrayList<ArrayList<Boolean>> adjacencyMatrix;
-//	private ArrayList<Vertex> vertexes;
+	private ArrayList<Vertex> vertexes;
 
 	private static MyProblemDefinition myProblemDefinition;
 
@@ -21,6 +21,11 @@ public class MyProblemDefinition {
 		super();
 		int option=1;
 		this.adjacencyMatrix = Data.pick(option);
+		this.vertexes = new ArrayList<>(adjacencyMatrix.size());
+		Vertex.resetNextId();
+		for (int i=0;i< adjacencyMatrix.size();i++){
+			vertexes.add(new Vertex());
+		}
 	}
 
 	public static MyProblemDefinition getInstance() {
@@ -33,4 +38,7 @@ public class MyProblemDefinition {
 	public ArrayList<ArrayList<Boolean>> getAdjacencyMatrix() {
 		return adjacencyMatrix;
 	}
+
+	public ArrayList<Vertex> getVertexes() {return vertexes;}
+
 }
