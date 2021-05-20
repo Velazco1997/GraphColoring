@@ -4,6 +4,7 @@ import problem.definition.Operator;
 import problem.definition.State;
 
 import java.util.List;
+import java.util.Set;
 
 public class MyOperator extends Operator {
 	/**
@@ -19,11 +20,12 @@ public class MyOperator extends Operator {
 
 	/**
 	 * Genera la solucion inicial del problema
-	 * @param integer tamaño de la vecindad
+	 * @param neighbourhoodSize
 	 * @return
 	 */
 	@Override
-	public List<State> generateRandomState(Integer integer) {
+	public List<State> generateRandomState(Integer neighbourhoodSize) {
+
 		return null;
 	}
 
