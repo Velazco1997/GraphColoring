@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MyProblemDefinition {
 	//poner las matrices que definen mi problema
 
-//	private ArrayList<Object> colors;
+//    private ArrayList<Object> colors;
 	private ArrayList<ArrayList<Boolean>> adjacencyMatrix;
 //	private ArrayList<Vertex> vertexes;
 
@@ -23,7 +23,7 @@ public class MyProblemDefinition {
 		this.adjacencyMatrix = Data.pick(option);
 	}
 
-	public MyProblemDefinition getInstance() {
+	public static MyProblemDefinition getInstance() {
 		if (myProblemDefinition==null){
 			myProblemDefinition=new MyProblemDefinition();
 		}

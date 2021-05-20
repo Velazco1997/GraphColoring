@@ -13,11 +13,7 @@ public class MyObjetiveFunction extends ObjetiveFunction {
 	 */
 	@Override
 	public Double Evaluation(State state) {
-		List<Object> code=state.getCode();
-		for(int i=0; i<code.size();i++){
-
-		}
-
-		return null;
+		double k=state.getCode().size(); //k es la cantidad de colores empleada en la coloración
+		return k;
 	}
 }
