@@ -161,7 +161,9 @@ public class Executer {
 
 	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, IOException {
 
+
 		Executer executer = new Executer(500, 5);
+
 		int instanceIdx=1;
 		executer.instanceInitializer(instanceIdx);
 		List<State> solutions = executer.executeEE();//S-Metaheuristicas P-Metaheristicas

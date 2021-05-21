@@ -1,0 +1,85 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{lscape}
+\title{Output tables for the test of Multiple comparisons.}
+\author{}
+\date{\today}
+\begin{document}
+\begin{landscape}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\section{Average rankings of Friedman test}
+
+
+
+Average ranks obtained by applying the Friedman procedure
+
+\begin{table}[!htp]
+\centering
+\begin{tabular}{|c|c|}\hline
+Algorithm&Ranking\\\hline
+Evaluacion-ECR & 2.1\\
+Evaluacion-EE & 1.6\\
+Evaluacion-RS & 2.3\\
+\hline
+\end{tabular}
+\caption{Average Rankings of the algorithms}
+\end{table}
+
+Friedman statistic considering reduction performance (distributed according to chi-square with 2 degrees of freedom: 1.3.
+
+P-value computed by Friedman Test: 0.5220457767613436.\newline
+
+
+
+\pagebreak
+
+\section{Post hoc comparisons}
+
+Results achieved on post hoc comparisons for $\alpha = 0.05$, $\alpha = 0.10$ and adjusted p-values.
+
+\subsection{P-values for $\alpha=0.05$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$\\
+\hline3&Evaluacion-EE vs. Evaluacion-RS&1.106797&0.268382\\
+2&Evaluacion-ECR vs. Evaluacion-EE&0.790569&0.429195\\
+1&Evaluacion-ECR vs. Evaluacion-RS&0.316228&0.75183\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.05$}
+\end{table}\pagebreak
+
+\subsection{P-values for $\alpha=0.10$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$\\
+\hline3&Evaluacion-EE vs. Evaluacion-RS&1.106797&0.268382\\
+2&Evaluacion-ECR vs. Evaluacion-EE&0.790569&0.429195\\
+1&Evaluacion-ECR vs. Evaluacion-RS&0.316228&0.75183\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.10$}
+\end{table}\pagebreak
+
+\subsection{Adjusted p-values}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccc}
+i&hypothesis&unadjusted $p$\\
+\hline1&Evaluacion-EE vs .Evaluacion-RS&0.268382\\
+2&Evaluacion-ECR vs .Evaluacion-EE&0.429195\\
+3&Evaluacion-ECR vs .Evaluacion-RS&0.75183\\
+\hline
+\end{tabular}
+\caption{Adjusted $p$-values}
+\end{table}
+
+\end{landscape}
+\end{document}

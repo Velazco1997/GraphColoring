@@ -16,15 +16,17 @@ public class Data {
 			}
 			matrix.get(i).add(false); //diagonal
 		}
+
 		//build lower triangle from the upper one
 		for (int i = 0; i < matrixSize ; i++) {
-			//copy an entire row to an array and then put it as a column, based on the matrix symmetry
-			ArrayList<Boolean> row=new ArrayList<>(matrixSize);
-			for (int j = 0; j < matrixSize ; j++) {
-				row.add(matrix.get(i).get(j));
+			//copy an entire row to the column, based on the matrix symmetry
+//			ArrayList<Boolean> row=new ArrayList<>(matrixSize);
+			for (int j = i+1; j < matrixSize ; j++) {
+
+				matrix.get(i).add(matrix.get(j).get(i));
 			}
 			//putting row as column
-			matrix.set(i,row);
+//			matrix.set(i,row);
 		}
 
 		return matrix;
