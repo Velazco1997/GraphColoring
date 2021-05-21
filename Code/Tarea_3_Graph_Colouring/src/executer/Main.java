@@ -258,12 +258,36 @@ public class Main {
 	    }
 	    
 	    private static int espacioBusqueda (int n){
-	    	int espacioBusqueda = n;
-	    	for (int i = n-1; i > 0; i--){
-	    		espacioBusqueda *= i;
-	    	}
-	    	return espacioBusqueda;
+
+	    	return espacioBusquedaUnaInstancia(n);
 	    }
+
+	private static int numeroStirling2tipo(int n,int k){
+
+			if(n==0&&k==0){
+				return 1;
+			}else if(n>=1 && k==0){
+				return 0;
+			}else if (n>=1&&k==n){//creo q este contempla la primera condición de parada
+				return 1;
+			}else if(n>=1 && k==1){
+				return 1;
+			}else {
+				return numeroStirling2tipo(n-1,k-1)+ k*numeroStirling2tipo(n-1,k);
+			}
+	}
+
+	    private static int numeroBell(int n){
+			int resultado =0;
+		    for (int k = 0; k <= n; k++) {
+		    	resultado +=numeroStirling2tipo(n,k);
+		    }
+		return resultado;
+	    }
+	    private static int espacioBusquedaUnaInstancia(int n){
+			return numeroBell(n);
+	    }
+
 
 		private static double evaluacionPromedio(List<State> soluciones) {
 	        double evaluacionPromedio = 0;
@@ -400,6 +424,8 @@ public class Main {
 	    	}
 	    	saveTamanhoEspacioBusqueda(tamanhoEspacioDeBusquedaPorInstancia, cantidadSolucionesPorInstancia);
 	    	saveEvaluaciones(evaluacionPromedioPorInstancia);
+
+
 	    }
 	    
 }
