@@ -17,7 +17,6 @@ public class Data {
 			matrix.get(i).add(false); //diagonal
 		}
 
-		System.out.println(matrix);
 		//build lower triangle from the upper one
 		for (int i = 0; i < matrixSize ; i++) {
 			//copy an entire row to the column, based on the matrix symmetry
@@ -29,8 +28,6 @@ public class Data {
 			//putting row as column
 //			matrix.set(i,row);
 		}
-		System.out.println("matrixsize value" + matrixSize);
-		System.out.println(matrix);
 
 		return matrix;
 	}
