@@ -49,6 +49,7 @@ public class MyOperator extends Operator {
 		List<State> neighborhood=new ArrayList<>(neighbourhoodSize);
 		for(int i=0;i<neighbourhoodSize;i++){
 			State state = new State();
+			GreedyAlgorithm greedy=new GreedyAlgorithm();
 			state=greedy.execute();
 			neighborhood.add(state);
 		}

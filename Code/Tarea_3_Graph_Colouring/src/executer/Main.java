@@ -82,7 +82,7 @@ public class Main {
     
 	 public void instanceInitializer (int instanceIdx ){
 		    
-	        ArrayList<ArrayList<Boolean>> adjacencyMatrix = Data.pick(1);
+	        ArrayList<ArrayList<Boolean>> adjacencyMatrix = Data.randomMatrix(instanceIdx);
 	        		//generarMatrizAdyacencia(instanceIdx);
 	        		
 	        ArrayList<Vertex> vertexes = new ArrayList<>(adjacencyMatrix.size());
@@ -342,7 +342,7 @@ public class Main {
 	        List<Integer> tamanhoEspacioDeBusquedaPorInstancia = new ArrayList<>();
 			
 	    	for (int i = 6; i < 11; i++){// se utiliza la variable i para crear 5 instancias de distintos tamanhos
-	    		Main executer = new Main(10, 10);
+	    		Main executer = new Main(10, 20);
 	    		executer.instanceInitializer(i);
 	    		
 	    		//sacando las instancias por pantalla
