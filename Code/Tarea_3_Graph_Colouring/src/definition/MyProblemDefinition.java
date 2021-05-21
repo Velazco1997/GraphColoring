@@ -41,4 +41,11 @@ public class MyProblemDefinition {
 
 	public ArrayList<Vertex> getVertexes() {return vertexes;}
 
+	public void setAdjacencyMatrix(ArrayList<ArrayList<Boolean>> adjacencyMatrix) {
+		this.adjacencyMatrix = adjacencyMatrix;
+	}
+
+	public void setVertexes(ArrayList<Vertex> vertexes) {
+		this.vertexes = vertexes;
+	}
 }

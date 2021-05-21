@@ -13,6 +13,10 @@ public class MyOperator extends Operator {
 	private GreedyAlgorithm greedy;//Constructor
 	private MutationOperator mutationOperator;
 
+	public MyOperator( MutationOperator mutationOperator) {
+		this.greedy = new GreedyAlgorithm();
+		this.mutationOperator = mutationOperator;
+	}
 
 	/**
 	 * Genera una nueva vecindad a partir de un estado
