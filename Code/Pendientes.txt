@@ -1,0 +1,8 @@
+En la clase MyCodifiation falta implementar
+
+public Object getVariableAleatoryValue(int i) {
+		//el valor es un numero x tal que 0 <= x < k
+		return null;
+	}
+aún no sé como hacerlo ver el comentario que está en el código
+
