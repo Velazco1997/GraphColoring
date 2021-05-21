@@ -14,7 +14,7 @@ public class Data {
 			for (int j = 0; j < i; j++) {
 				matrix.get(i).add(random.nextBoolean());
 			}
-			matrix.get(i).add(false);
+			matrix.get(i).add(false); //diagonal
 		}
 		//build lower triangle from the upper one
 		for (int i = 0; i < matrixSize ; i++) {
