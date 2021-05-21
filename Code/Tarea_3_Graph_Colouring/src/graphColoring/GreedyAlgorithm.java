@@ -73,6 +73,9 @@ public class GreedyAlgorithm {
 		boolean independent=true;
 		int a=unassinged.get(i).getId();
 		int b= colours.get(j).getElements().get(k).getId();
+		System.out.println("a value "+a);
+		System.out.println("b value "+b);
+		System.out.println(MyProblemDefinition.getInstance().getAdjacencyMatrix());
 		if(MyProblemDefinition.getInstance().getAdjacencyMatrix().get(a).get(b)){//busca si el nodo que se quiere asignar es adyacente a alguno de los ya asignados
 			independent=false;
 		}

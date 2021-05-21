@@ -86,6 +86,7 @@ public class Main {
 	        		//generarMatrizAdyacencia(instanceIdx);
 	        		
 	        ArrayList<Vertex> vertexes = new ArrayList<>(adjacencyMatrix.size());
+	        Vertex.resetNextId();
 			for (int i=0;i< adjacencyMatrix.size();i++){
 				vertexes.add(new Vertex());
 			}
