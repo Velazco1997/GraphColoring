@@ -1,8 +1,34 @@
 package graphColoring;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Data {
+
+	public static ArrayList<ArrayList<Boolean>> randomMatrix(int matrixSize){
+		ArrayList<ArrayList<Boolean>> matrix =new ArrayList<>(matrixSize);
+		Random random=new Random();
+		//build upper triangular matrix
+		for (int i = 0; i < matrixSize; i++) {
+			matrix.add(new ArrayList<Boolean>());
+			for (int j = 0; j < i; j++) {
+				matrix.get(i).add(random.nextBoolean());
+			}
+			matrix.get(i).add(false); //diagonal
+		}
+		//build lower triangle from the upper one
+		for (int i = 0; i < matrixSize ; i++) {
+			//copy an entire row to an array and then put it as a column, based on the matrix symmetry
+			ArrayList<Boolean> row=new ArrayList<>(matrixSize);
+			for (int j = 0; j < matrixSize ; j++) {
+				row.add(matrix.get(i).get(j));
+			}
+			//putting row as column
+			matrix.set(i,row);
+		}
+
+		return matrix;
+	}
 	public static ArrayList<ArrayList<Boolean>> pick(int option) {
 		ArrayList<ArrayList<Boolean>> matrix= new ArrayList<>();
 		ArrayList<Boolean>row0 = new ArrayList<>();
